@@ -97,14 +97,14 @@ final class GitRepoViewController: UIViewController {
     
     private func addConstraints() {
         NSLayoutConstraint.activate([
-            repoIcon.widthAnchor.constraint(equalToConstant: 200),
-            repoIcon.heightAnchor.constraint(equalToConstant: 200),
+            repoIcon.widthAnchor.constraint(equalToConstant: 220),
+            repoIcon.heightAnchor.constraint(equalToConstant: 220),
             repoIcon.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            repoIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 24)
+            repoIcon.topAnchor.constraint(equalTo: view.topAnchor, constant: 36)
         ])
         
         NSLayoutConstraint.activate([
-            stackView.topAnchor.constraint(equalTo: repoIcon.bottomAnchor, constant: 16),
+            stackView.topAnchor.constraint(equalTo: repoIcon.bottomAnchor, constant: 8),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
             stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
@@ -132,6 +132,7 @@ final class GitRepoViewController: UIViewController {
     
     private func updateUI() {
         guard let repo = viewModel.repo else { return }
+        repoIcon.downloadImage(from: repo.organization.avatarUrl)
         fullNameLabel.text = repo.fullName
         languageLabel.text = "Programming language: " + repo.language
         forksLabel.text = "Number of forks: \(repo.forks)"
