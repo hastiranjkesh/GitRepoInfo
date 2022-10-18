@@ -21,21 +21,21 @@ final class GitRepoViewModel {
     }
     
     func getRepository() {
-        guard let url = URL(string: "https://github.com/facebook/facebook-ios-sdk") else {
+        guard let url = URL(string: "https://api.github.com/repos/facebook/facebook-ios-sdk") else {
             return
         }
         apiManager.getRepository(url: url)
             .receive(on: DispatchQueue.main)
-            .sink {[weak self] completion in
+            .sink(receiveCompletion: {[weak self] completion in
                 switch completion {
                 case .failure(let error):
                     self?.error = error
                 case .finished:
                     self?.isLoadingFinished = true
                 }
-            } receiveValue: {[weak self] repo in
+            }, receiveValue: { [weak self] repo in
                 self?.repo = repo
-            }
+            })
             .store(in: &cancellable)
     }
 }
