@@ -17,6 +17,7 @@
 		2DCBECDF28FEE04500E1BC0A /* GitRepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBECDE28FEE04500E1BC0A /* GitRepoViewModel.swift */; };
 		2DCBECE128FEE07C00E1BC0A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBECE028FEE07C00E1BC0A /* ApiManager.swift */; };
 		2DCBECE428FEE11100E1BC0A /* GitRepoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBECE328FEE11100E1BC0A /* GitRepoModel.swift */; };
+		2DCBECE728FEF69C00E1BC0A /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCBECE628FEF69C00E1BC0A /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		2DCBECDE28FEE04500E1BC0A /* GitRepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoViewModel.swift; sourceTree = "<group>"; };
 		2DCBECE028FEE07C00E1BC0A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		2DCBECE328FEE11100E1BC0A /* GitRepoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitRepoModel.swift; sourceTree = "<group>"; };
+		2DCBECE628FEF69C00E1BC0A /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		2DCBECAA28FEDADB00E1BC0A /* GitRepoInfo */ = {
 			isa = PBXGroup;
 			children = (
+				2DCBECE528FEF68400E1BC0A /* Helper */,
 				2DCBECE228FEE0F200E1BC0A /* Model */,
 				2DCBECDD28FEE01700E1BC0A /* View */,
 				2DCBECDC28FEDE1600E1BC0A /* ViewModel */,
@@ -160,6 +163,14 @@
 				2DCBECE328FEE11100E1BC0A /* GitRepoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2DCBECE528FEF68400E1BC0A /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2DCBECE628FEF69C00E1BC0A /* UIImageViewExtension.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +305,7 @@
 			files = (
 				2DCBECE128FEE07C00E1BC0A /* ApiManager.swift in Sources */,
 				2DCBECE428FEE11100E1BC0A /* GitRepoModel.swift in Sources */,
+				2DCBECE728FEF69C00E1BC0A /* UIImageViewExtension.swift in Sources */,
 				2DCBECB028FEDADB00E1BC0A /* ViewController.swift in Sources */,
 				2DCBECAC28FEDADB00E1BC0A /* AppDelegate.swift in Sources */,
 				2DCBECDF28FEE04500E1BC0A /* GitRepoViewModel.swift in Sources */,
