@@ -136,9 +136,9 @@ final class GitRepoViewController: UIViewController {
         repoIcon.downloadImage(from: repo.organization.avatarUrl)
         fullNameLabel.text = repo.fullName
         languageLabel.text = "Programming language: " + repo.language
-        forksLabel.text = "Number of forks: \(repo.forks)"
-        openIssuesLabel.text = "Number of open issues: \(repo.openIssuesCount)"
-        starredByLabel.text = "Number of starred by: \(repo.stargazersCount)"
+        forksLabel.text = "Forks: \(repo.forks)"
+        openIssuesLabel.text = "Open Issues: \(repo.openIssuesCount)"
+        starredByLabel.text = "Starred by: \(repo.stargazersCount)"
     }
 }
 

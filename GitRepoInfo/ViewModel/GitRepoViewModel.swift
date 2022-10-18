@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-final class GitRepoViewModel {
+protocol GitRepoViewModelProtocol {
+    func getRepository()
+}
+
+final class GitRepoViewModel: GitRepoViewModelProtocol {
     @Published var error: Error?
     @Published var isLoadingFinished: Bool = false
     
