@@ -16,8 +16,8 @@ struct GitRepoModel: Decodable {
     
     enum CodingKeys: String, CodingKey {
         case fullName = "full_name"
-        case language = "language"
-        case forks = "forks"
+        case language
+        case forks
         case openIssuesCount = "open_issues_count"
         case stargazersCount = "stargazers_count"
     }

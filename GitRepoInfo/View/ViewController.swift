@@ -23,6 +23,7 @@ final class GitRepoViewController: UIViewController {
     private lazy var fullNameLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -63,8 +64,8 @@ final class GitRepoViewController: UIViewController {
             openIssuesLabel,
             starredByLabel
         ])
-        stack.distribution = .fill
-        stack.alignment = .center
+        stack.distribution = .equalSpacing
+        stack.spacing = 16
         stack.axis = .vertical
         stack.translatesAutoresizingMaskIntoConstraints = false
         return stack
@@ -105,8 +106,7 @@ final class GitRepoViewController: UIViewController {
         NSLayoutConstraint.activate([
             stackView.topAnchor.constraint(equalTo: repoIcon.bottomAnchor, constant: 16),
             stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            stackView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16)
+            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
         ])
     }
     
@@ -131,7 +131,12 @@ final class GitRepoViewController: UIViewController {
     }
     
     private func updateUI() {
-        
+        guard let repo = viewModel.repo else { return }
+        fullNameLabel.text = repo.fullName
+        languageLabel.text = "Programming language: " + repo.language
+        forksLabel.text = "Number of forks: \(repo.forks)"
+        openIssuesLabel.text = "Number of open issues: \(repo.openIssuesCount)"
+        starredByLabel.text = "Number of starred by: \(repo.stargazersCount)"
     }
 }
 
