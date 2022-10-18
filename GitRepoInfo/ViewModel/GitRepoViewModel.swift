@@ -11,17 +11,18 @@ import Combine
 final class GitRepoViewModel {
     @Published var error: Error?
     @Published var isLoadingFinished: Bool = false
-    private var cancellable = Set<AnyCancellable>()
     
+    private var cancellable = Set<AnyCancellable>()
     private var apiManager: ApiManagerProtocol
     var repo: GitRepoModel?
+    private let urlPath = "https://api.github.com/repos/facebook/facebook-ios-sdk"
     
     init(apiManager: ApiManagerProtocol) {
         self.apiManager = apiManager
     }
     
     func getRepository() {
-        guard let url = URL(string: "https://api.github.com/repos/facebook/facebook-ios-sdk") else {
+        guard let url = URL(string: urlPath) else {
             return
         }
         apiManager.getRepository(url: url)

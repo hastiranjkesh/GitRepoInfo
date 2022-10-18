@@ -81,6 +81,9 @@ final class GitRepoViewController: UIViewController {
         addSubviews()
         addConstraints()
         
+        // TODO: could show an activityIndicator while data is loading
+        // fx: indicator.startAnimating()
+        // indicator.hidesWhenStopped = true
         viewModel.getRepository()
         addObservers()
     }
@@ -112,6 +115,8 @@ final class GitRepoViewController: UIViewController {
                 if isLoadingFinished {
                     self?.updateUI()
                 }
+                // TODO: could show an activityIndicator while data is loading
+                // fx: indicator.stopAnimating()
             }
             .store(in: &cancellable)
         
@@ -120,6 +125,7 @@ final class GitRepoViewController: UIViewController {
             .sink { error in
                 if let error = error {
                     print("Something went wrong! \(error.localizedDescription)")
+                    // TODO: could show an alert view here
                 }
             }
             .store(in: &cancellable)
