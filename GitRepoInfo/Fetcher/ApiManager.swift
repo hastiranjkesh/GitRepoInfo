@@ -8,7 +8,11 @@
 import Foundation
 import Combine
 
-final class ApiManager {
+protocol ApiManagerProtocol {
+    func getRepository(url: URL) -> AnyPublisher<GitRepoModel, Error>
+}
+
+final class ApiManager: ApiManagerProtocol {
     let session = URLSession.shared
     
     func getRepository(url: URL) -> AnyPublisher<GitRepoModel, Error> {
