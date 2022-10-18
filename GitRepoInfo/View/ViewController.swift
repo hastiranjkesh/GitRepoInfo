@@ -24,35 +24,30 @@ final class GitRepoViewController: UIViewController {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
         label.font = UIFont.boldSystemFont(ofSize: 22)
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var languageLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var forksLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var openIssuesLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private lazy var starredByLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.textAlignment = .center
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
