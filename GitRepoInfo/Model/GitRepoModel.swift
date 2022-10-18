@@ -13,6 +13,7 @@ struct GitRepoModel: Decodable {
     let forks: Int
     let openIssuesCount: Int
     let stargazersCount: Int
+    let organization: RepoOrganization
     
     enum CodingKeys: String, CodingKey {
         case fullName = "full_name"
@@ -20,6 +21,14 @@ struct GitRepoModel: Decodable {
         case forks
         case openIssuesCount = "open_issues_count"
         case stargazersCount = "stargazers_count"
+        case organization
     }
 }
 
+struct RepoOrganization: Decodable {
+    let avatarUrl: String
+    
+    enum CodingKeys: String, CodingKey {
+        case avatarUrl = "avatar_url"
+    }
+}
